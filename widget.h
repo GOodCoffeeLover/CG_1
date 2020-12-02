@@ -19,7 +19,8 @@ public:
 protected:
     void paintEvent(QPaintEvent* );
 private:
-    const double Max_a = 400.0; QLabel *lblOX, *lblOY, *lblO0, *lblOY_100, *lblOY100, *lblOX_100, *lblOX100;
+    const double Max_a = 400.0;
+    QLabel *lblOX, *lblOY, *lblO0, *lblOY_100, *lblOY100, *lblOX_100, *lblOX100; // labels for
     QDoubleSpinBox *Box_step=nullptr, *Box_a = nullptr;
     double curve(double, double);
 private slots:

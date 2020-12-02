@@ -44,9 +44,9 @@ void Widget::redrawOnValueChange(double){
 
 void Widget::paintEvent(QPaintEvent*){
     const double step = Box_step->value(),
-                 a =Box_a->value()/Max_a* (height()<width()?height():width()) /2,
-                 pi(4*atan(1)),
-                 end(2*pi + step);
+                 a  = Box_a->value()/Max_a* (height()<width()?height():width()) /2,
+                 pi = 4*atan(1),
+                 end= 2*pi + step;
 
     QPointF p1(curve(0, a)*cos(0), 0);
 
@@ -82,7 +82,7 @@ void Widget::paintEvent(QPaintEvent*){
         ptr.drawLine(QPointF(width()/2 +arrow, height()/2 - step_mark),
                      QPointF(width()/2 - arrow, height()/2 - step_mark));
     }
-//label moves
+    //label moves
     lblOX->move(width()-4*arrow, height()/2-4*arrow);
     lblOY->move(width()/2+2*arrow,2*arrow);
     lblO0->move(width()/2 + arrow/2, height()/2);
@@ -90,7 +90,8 @@ void Widget::paintEvent(QPaintEvent*){
     lblOX_100->move(width()/2-100/Max_a * (height()<width()?height():width())/2, height()/2);
     lblOY100 ->move(width()/2, height()/2+100/Max_a * (height()<width()?height():width())/2);
     lblOY_100->move(width()/2, height()/2-100/Max_a * (height()<width()?height():width())/2);
-//grafic
+
+    //curve grafic
     ptr.setPen(Qt::blue);
     const QPointF center (width()/2.0, height() / 2.0);
     for(double fi = step; fi <end; fi+=step){
